@@ -138,7 +138,7 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
               <Label htmlFor={`complex-queens-team-${team.id}`}>عدد البنات (Q) المأكولة</Label>
               <Input 
                 id={`complex-queens-team-${team.id}`} type="number" min="0" max={TOTAL_QUEENS} 
-                value={eatsData?.[team.id]?.queens || 0} 
+                value={eatsData?.[team.id]?.queens === 0 ? '' : eatsData?.[team.id]?.queens || ''} 
                 onChange={(e) => handleInputChange(team.id, "queens", e.target.value)}
                 onFocus={(e) => handleInputChange(team.id, "queens", "")}
               />
@@ -153,7 +153,7 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
               <Label htmlFor={`complex-tricks-team-${team.id}`}>عدد اللطشات</Label>
               <Input 
                 id={`complex-tricks-team-${team.id}`} type="number" min="0" max={TOTAL_TRICKS}
-                value={eatsData?.[team.id]?.tricks || 0} 
+                value={eatsData?.[team.id]?.tricks === 0 ? '' : eatsData?.[team.id]?.tricks || ''} 
                 onChange={(e) => handleInputChange(team.id, "tricks", e.target.value)}
                 onFocus={(e) => handleInputChange(team.id, "tricks", "")}
               />
@@ -163,7 +163,7 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
               <Input 
                 id={`complex-diamonds-team-${team.id}`} type="number" min="0" 
                 max={TOTAL_DIAMONDS_CARDS}
-                value={eatsData?.[team.id]?.diamonds || 0} 
+                value={eatsData?.[team.id]?.diamonds === 0 ? '' : eatsData?.[team.id]?.diamonds || ''} 
                 onChange={(e) => handleInputChange(team.id, "diamonds", e.target.value)}
                 onFocus={(e) => handleInputChange(team.id, "diamonds", "")}
               />
