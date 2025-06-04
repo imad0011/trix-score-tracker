@@ -22,6 +22,7 @@ const TrixScoreDialog = ({ open, onOpenChange, players, teams, trixRoundData, se
                 min="1" max="4"
                 value={trixRoundData.ranks[player.id] || ''}
                 onChange={(e) => setTrixRoundData(prev => ({ ...prev, ranks: { ...prev.ranks, [player.id]: e.target.value } }))}
+                onFocus={(e) => setTrixRoundData(prev => ({ ...prev, ranks: { ...prev.ranks, [player.id]: '' } }))}
                 className="w-20 text-center"
               />
             </div>

@@ -136,9 +136,12 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
           <div className="grid grid-cols-2 gap-x-6 gap-y-4">
             <div>
               <Label htmlFor={`complex-queens-team-${team.id}`}>عدد البنات (Q) المأكولة</Label>
-              <Input id={`complex-queens-team-${team.id}`} type="number" min="0" max={TOTAL_QUEENS} 
-                     value={eatsData?.[team.id]?.queens || 0} 
-                     onChange={(e) => handleInputChange(team.id, "queens", e.target.value)} />
+              <Input 
+                id={`complex-queens-team-${team.id}`} type="number" min="0" max={TOTAL_QUEENS} 
+                value={eatsData?.[team.id]?.queens || 0} 
+                onChange={(e) => handleInputChange(team.id, "queens", e.target.value)}
+                onFocus={(e) => handleInputChange(team.id, "queens", "")}
+              />
             </div>
             <div className="flex items-center space-x-2 space-x-reverse pt-5">
               <Checkbox id={`complex-king-team-${team.id}`} 
@@ -151,7 +154,9 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
               <Input 
                 id={`complex-tricks-team-${team.id}`} type="number" min="0" max={TOTAL_TRICKS}
                 value={eatsData?.[team.id]?.tricks || 0} 
-                onChange={(e) => handleInputChange(team.id, "tricks", e.target.value)} />
+                onChange={(e) => handleInputChange(team.id, "tricks", e.target.value)}
+                onFocus={(e) => handleInputChange(team.id, "tricks", "")}
+              />
             </div>
             <div>
               <Label htmlFor={`complex-diamonds-team-${team.id}`}>عدد الديناري</Label>
@@ -159,7 +164,9 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
                 id={`complex-diamonds-team-${team.id}`} type="number" min="0" 
                 max={TOTAL_DIAMONDS_CARDS}
                 value={eatsData?.[team.id]?.diamonds || 0} 
-                onChange={(e) => handleInputChange(team.id, "diamonds", e.target.value)} />
+                onChange={(e) => handleInputChange(team.id, "diamonds", e.target.value)}
+                onFocus={(e) => handleInputChange(team.id, "diamonds", "")}
+              />
             </div>
           </div>
         </Card>
