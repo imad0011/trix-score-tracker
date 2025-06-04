@@ -70,7 +70,7 @@ export const calculateTeamTotal = (rounds, teamId) => {
   }, 0);
 };
 
-export const TOTAL_KINGDOMS_PER_GAME = 4; 
+export const TOTAL_KINGDOMS_PER_GAME = 8;
 export const TOTAL_TRICKS = 13;
 export const TOTAL_DIAMONDS_CARDS = 13;
 export const TOTAL_QUEENS = 4;
