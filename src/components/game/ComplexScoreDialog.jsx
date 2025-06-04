@@ -154,19 +154,12 @@ const EatsTabContent = ({ teams, eatsData, onEatsDataChange }) => {
                 onChange={(e) => handleInputChange(team.id, "tricks", e.target.value)} />
             </div>
             <div>
-              <Label htmlFor={`complex-diamonds-team-${team.id}`}>عدد الديناري (بدون بنت الديناري ككرت)</Label>
+              <Label htmlFor={`complex-diamonds-team-${team.id}`}>عدد الديناري</Label>
               <Input 
                 id={`complex-diamonds-team-${team.id}`} type="number" min="0" 
-                max={TOTAL_DIAMONDS_CARDS - (eatsData?.[team.id]?.queenOfDiamondsCardEatenByTeam ? 1 : 0) - (eatsData?.[teams.find(t => t.id !== team.id)?.id]?.queenOfDiamondsCardEatenByTeam ? 1 : 0) }
+                max={TOTAL_DIAMONDS_CARDS}
                 value={eatsData?.[team.id]?.diamonds || 0} 
                 onChange={(e) => handleInputChange(team.id, "diamonds", e.target.value)} />
-            </div>
-            <div className="flex items-center space-x-2 space-x-reverse pt-2 col-span-2">
-              <Checkbox 
-                id={`complex-qd-eaten-team-${team.id}`} 
-                checked={eatsData?.[team.id]?.queenOfDiamondsCardEatenByTeam || false} 
-                onCheckedChange={(checked) => handleInputChange(team.id, "queenOfDiamondsCardEatenByTeam", checked)} />
-              <Label htmlFor={`complex-qd-eaten-team-${team.id}`}>أكل بنت الديناري (ككرت)</Label>
             </div>
           </div>
         </Card>
